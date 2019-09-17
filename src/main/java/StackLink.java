@@ -9,10 +9,15 @@
  **/
 public class StackLink<Item> {
 
+    private Node firstNode;
+
+    private int size;
+
     private class Node {
         Item item;
         Node next;
     }
+
 
 
 }

@@ -29,6 +29,7 @@ public class StackArray<Item> implements Iterable<Item>{
         }
         Item lastItem = (Item) objects[size-1];
         objects[size-1] = null;
+        size--;
         return lastItem;
     }
 
