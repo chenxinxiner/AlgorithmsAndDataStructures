@@ -1,3 +1,4 @@
+package collection.base;
 
 /**
  * 堆栈链表实现

@@ -1,4 +1,4 @@
-package List;
+package collection.list;
 
 /**
  * 线性表
