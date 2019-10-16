@@ -2,19 +2,21 @@ package collection.tree;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class BSTTest {
 
     @Test
     void put() {
-        BST<String, Integer> stringIntegerBST = new BST<String, Integer>();
-        stringIntegerBST.put("b",1);
-        stringIntegerBST.put("a",2);
-        stringIntegerBST.put("c",3);
-        stringIntegerBST.put("f",4);
-        System.out.printf(String.valueOf(stringIntegerBST.get("c")));
-        System.out.printf(String.valueOf(stringIntegerBST.get("f")));
+        BinarySearchTree<String, String> stringIntegerBST = new BinarySearchTree<String, String>();
+        stringIntegerBST.put("h","h");
+        stringIntegerBST.put("a","a");
+        stringIntegerBST.put("c","asdasda");
+        stringIntegerBST.put("f","qweq");
+        stringIntegerBST.put("e","e");
+        stringIntegerBST.put("j","j");
+        stringIntegerBST.put("d","d");
+        stringIntegerBST.put("K","K");
+        stringIntegerBST.put("m","m");
+        System.out.println(stringIntegerBST.size()+" "+stringIntegerBST.get("c"));
     }
 
     @Test
