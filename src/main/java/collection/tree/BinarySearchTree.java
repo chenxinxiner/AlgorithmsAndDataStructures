@@ -82,5 +82,26 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
         }
     }
 
+    public Key min() {
+        return min(root);
+    }
 
+    private Key min(Node root) {
+        if (root.leftNode == null) {
+            return root.key;
+        }else{
+            return min(root.leftNode);
+        }
+    }
+    public Key max() {
+        return max(root);
+    }
+
+    private Key max(Node root) {
+        if (root.rightNode == null) {
+            return root.key;
+        }else{
+            return min(root.rightNode);
+        }
+    }
 }

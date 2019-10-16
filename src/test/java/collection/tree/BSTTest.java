@@ -17,6 +17,8 @@ class BSTTest {
         stringIntegerBST.put("K","K");
         stringIntegerBST.put("m","m");
         System.out.println(stringIntegerBST.size()+" "+stringIntegerBST.get("c"));
+        System.out.println(stringIntegerBST.min());
+        System.out.println(stringIntegerBST.max());
     }
 
     @Test
