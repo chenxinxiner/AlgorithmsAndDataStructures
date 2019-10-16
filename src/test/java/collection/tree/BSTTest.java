@@ -21,5 +21,14 @@ class BSTTest {
 
     @Test
     void get() {
+        int i = 1;
+        switch (i) {
+            case 1:
+                System.out.printf("1");
+            case 2:
+                System.out.printf("2");
+            case 3:
+                System.out.printf("3");
+        }
     }
 }
