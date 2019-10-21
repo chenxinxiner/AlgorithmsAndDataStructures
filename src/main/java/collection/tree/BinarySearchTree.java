@@ -311,4 +311,17 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
         node.n = size(node.leftNode) + size(node.rightNode) + 1;
         return node;
     }
+
+    public void zhongxu() {
+    zhongxu(root);
+    }
+
+    public void zhongxu(Node node) {
+        if (node == null) {
+            return;
+        }
+        zhongxu(node.leftNode);
+        System.out.println(node.key);
+        zhongxu(node.rightNode);
+    }
 }

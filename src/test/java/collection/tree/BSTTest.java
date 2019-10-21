@@ -8,25 +8,29 @@ class BSTTest {
     void put() throws Exception {
         BinarySearchTree<String, String> stringIntegerBST = new BinarySearchTree<String, String>();
         stringIntegerBST.put("h","h");
-        stringIntegerBST.put("a","a");
         stringIntegerBST.put("f","qweq");
         stringIntegerBST.put("m","m");
         stringIntegerBST.put("e","e");
+        stringIntegerBST.put("b","b");
+        stringIntegerBST.put("x","X");
+        stringIntegerBST.put("a","a");
         stringIntegerBST.put("c","asdasda");
         stringIntegerBST.put("d","d");
         stringIntegerBST.put("j","j");
         stringIntegerBST.put("k","k");
-        System.out.println(stringIntegerBST.size()+" "+stringIntegerBST.get("c"));
-        System.out.println("max= "+stringIntegerBST.min());
-        System.out.println("min= "+stringIntegerBST.max());
-        System.out.println("floor= "+stringIntegerBST.floor("g"));
-        System.out.println("ceiling= "+stringIntegerBST.ceiling("g"));
-        System.out.println("select= "+stringIntegerBST.select(4));
-        System.out.println("rank= "+stringIntegerBST.rank("j"));
+        // System.out.println(stringIntegerBST.size()+" "+stringIntegerBST.get("c"));
+        // System.out.println("max= "+stringIntegerBST.min());
+        // System.out.println("min= "+stringIntegerBST.max());
+        // System.out.println("floor= "+stringIntegerBST.floor("g"));
+        // System.out.println("ceiling= "+stringIntegerBST.ceiling("g"));
+        // System.out.println("select= "+stringIntegerBST.select(4));
+        // System.out.println("rank= "+stringIntegerBST.rank("j"));
         // stringIntegerBST.deleteMin();
         // stringIntegerBST.deleteMax();
-        stringIntegerBST.delete("j");
+        // stringIntegerBST.delete("j");
+        stringIntegerBST.zhongxu();
         System.out.println();
+
     }
 
     @Test
