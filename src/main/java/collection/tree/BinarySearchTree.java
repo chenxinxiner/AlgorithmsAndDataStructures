@@ -83,24 +83,24 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
     }
 
     public Key min() {
-        return min(root);
+        return min(root).key;
     }
 
-    private Key min(Node root) {
+    private Node min(Node root) {
         if (root.leftNode == null) {
-            return root.key;
+            return root;
         } else {
             return min(root.leftNode);
         }
     }
 
     public Key max() {
-        return max(root);
+        return max(root).key;
     }
 
-    private Key max(Node root) {
+    private Node max(Node root) {
         if (root.rightNode == null) {
-            return root.key;
+            return root;
         } else {
             return max(root.rightNode);
         }
@@ -202,43 +202,45 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
 
     /**
      * 给定键，返回在BST中排名
-      *@Description
-      *@Params [key]
-      *@Return int
-      *@Author chenxin
-      *@Date 2019-10-18 15:47
-      *@Version 1.0
+     *
+     * @Description
+     * @Params [key]
+     * @Return int
+     * @Author chenxin
+     * @Date 2019-10-18 15:47
+     * @Version 1.0
      * rnak(node) = size(left)+node的前面的
-      **/
+     **/
     public int rank(Key key) {
-        return rank(root, key,1);
+        return rank(root, key, 1);
     }
 
-    private int rank(Node node, Key key,int k) {
+    private int rank(Node node, Key key, int k) {
         if (node == null) {
             return -1;
         }
         int cmp = key.compareTo(node.key);
         if (cmp > 0) {
-            return rank(node.rightNode, key,k+size(node.leftNode)+1);
+            return rank(node.rightNode, key, k + size(node.leftNode) + 1);
         } else if (cmp < 0) {
-            return rank(node.leftNode, key ,k);
+            return rank(node.leftNode, key, k);
         } else {
-            return k+size(node.leftNode);
+            return k + size(node.leftNode);
         }
     }
 
     /**
      * 删除最小键
-      *@Description
-      *@Params []
-      *@Return void
-      *@Author chenxin
-      *@Date 2019-10-18 16:37
-      *@Version 1.0
-      **/
+     *
+     * @Description
+     * @Params []
+     * @Return void
+     * @Author chenxin
+     * @Date 2019-10-18 16:37
+     * @Version 1.0
+     **/
     public void deleteMin() {
-        root =deleteMin(root);
+        root = deleteMin(root);
     }
 
     private Node deleteMin(Node node) {
@@ -247,10 +249,66 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
         }
         if (node.leftNode != null) {
             node.leftNode = deleteMin(node.leftNode);
-            node.n = size(node.leftNode)+size(node.rightNode)+1;
+            node.n = size(node.leftNode) + size(node.rightNode) + 1;
             return node;
         } else {
             return node.rightNode;
         }
+    }
+
+    /**
+     * 删除最大键
+     *
+     * @Description
+     * @Params []
+     * @Return void
+     * @Author chenxin
+     * @Date 2019-10-21 10:35
+     * @Version 1.0
+     **/
+    public void deleteMax() {
+        root = deleteMax(root);
+    }
+
+    private Node deleteMax(Node node) {
+        if (node == null) {
+            return null;
+        }
+        if (node.rightNode != null) {
+            node.rightNode = deleteMax(node.rightNode);
+            node.n = size(node.leftNode) + size(node.rightNode) + 1;
+            return node;
+        } else {
+            return node.leftNode;
+        }
+    }
+
+    public void delete(Key key) {
+        root = delete(root, key);
+    }
+
+    public Node delete(Node node, Key key) {
+        if (node == null) {
+            return null;
+        }
+        int tmp = key.compareTo(node.key);
+        if (tmp > 0) {
+            node.rightNode = delete(node.rightNode, key);
+        } else if (tmp < 0) {
+            node.leftNode = delete(node.leftNode, key);
+        } else {
+            if (node.leftNode != null && node.rightNode != null) {
+                Node n = node;
+                node = min(node);
+                node.rightNode = deleteMin(node.rightNode);
+                node.leftNode = n.leftNode;
+            } else if (node.leftNode == null) {
+                return node.leftNode;
+            } else if (node.rightNode == null) {
+                return node.rightNode;
+            }
+        }
+        node.n = size(node.leftNode) + size(node.rightNode) + 1;
+        return node;
     }
 }

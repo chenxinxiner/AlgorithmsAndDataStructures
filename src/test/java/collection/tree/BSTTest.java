@@ -23,7 +23,9 @@ class BSTTest {
         System.out.println("ceiling= "+stringIntegerBST.ceiling("g"));
         System.out.println("select= "+stringIntegerBST.select(4));
         System.out.println("rank= "+stringIntegerBST.rank("j"));
-        stringIntegerBST.deleteMin();
+        // stringIntegerBST.deleteMin();
+        // stringIntegerBST.deleteMax();
+        stringIntegerBST.delete("j");
         System.out.println();
     }
 
@@ -45,5 +47,14 @@ class BSTTest {
         System.out.println("select= "+binarySearchTree.select(1321233));
         System.out.println("rank= "+binarySearchTree.rank(doubles[231232]));
         System.out.println("时间 ="+(System.currentTimeMillis()-l));
+    }
+
+    @Test
+    public void test2() {
+        String a = "aaaa";
+        String b = "bbbb";
+        a = b;
+        b = "ccc";
+        System.out.printf(a);
     }
 }
