@@ -2,6 +2,9 @@ package collection.tree;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Iterator;
+import java.util.Queue;
+
 class BSTTest {
 
     @Test
@@ -28,7 +31,12 @@ class BSTTest {
         // stringIntegerBST.deleteMin();
         // stringIntegerBST.deleteMax();
         // stringIntegerBST.delete("j");
-        stringIntegerBST.zhongxu();
+        // stringIntegerBST.zhongxu();
+        Iterable<String> queue = stringIntegerBST.keys("b","m");
+        Iterator<String> iterator = queue.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
         System.out.println();
 
     }

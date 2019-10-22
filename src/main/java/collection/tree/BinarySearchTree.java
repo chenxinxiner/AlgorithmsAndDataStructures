@@ -1,6 +1,8 @@
 package collection.tree;
 
 import javax.security.auth.kerberos.KerberosTicket;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * 二叉查找树
@@ -312,16 +314,48 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
         return node;
     }
 
-    public void zhongxu() {
-    zhongxu(root);
+    /**
+     * 返回所有键的迭代器
+      *@Description
+      *@Params []
+      *@Return java.lang.Iterable<Key>
+      *@Author chenxin
+      *@Date 2019-10-22 17:01
+      *@Version 1.0
+      **/
+    public Iterable<Key> keys() {
+        return keys(min(), max());
     }
 
-    public void zhongxu(Node node) {
+    /**
+     * 返回指定范围键的迭代器
+      *@Description
+      *@Params [min, max]
+      *@Return java.lang.Iterable<Key>
+      *@Author chenxin
+      *@Date 2019-10-22 17:00
+      *@Version 1.0
+      **/
+    public Iterable<Key> keys(Key min, Key max) {
+        Queue<Key> keys = new LinkedList<Key>();
+        keys(keys,root,min,max);
+        return keys;
+    }
+
+    public void keys(Queue keys,Node node,Key min,Key max) {
         if (node == null) {
             return;
         }
-        zhongxu(node.leftNode);
-        System.out.println(node.key);
-        zhongxu(node.rightNode);
+        if (node.key.compareTo(min) <0) {
+            keys(keys, node.rightNode, min, max);
+        } else if (node.key.compareTo(min) >= 0 && node.key.compareTo(max) <= 0) {
+            //中序遍历的思想
+            keys(keys, node.leftNode, min, max);
+            keys.add(node.key);
+            keys(keys, node.rightNode, min, max);
+        } else if(node.key.compareTo(max) > 0) {
+            keys(keys, node.leftNode, min, max);
+        }
     }
+
 }
