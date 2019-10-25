@@ -167,6 +167,7 @@ public class RedBlackTree<Key extends Comparable, Value> {
         if (isRed(h.leftNode) && isRed(h.leftNode.leftNode)) {
             h = rotateRight(h);
         }
+        h.n = size(h.leftNode)+size(h.rightNode)+1;
         return h;
     }
 
