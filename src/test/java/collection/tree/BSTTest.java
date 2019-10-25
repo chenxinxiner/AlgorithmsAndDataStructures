@@ -63,10 +63,16 @@ class BSTTest {
 
     @Test
     public void test2() {
-        String a = "aaaa";
-        String b = "bbbb";
-        a = b;
-        b = "ccc";
-        System.out.printf(a);
+        BinarySearchTree<String,String> binarySearchTree = new BinarySearchTree();
+        binarySearchTree.put("b","b");
+        binarySearchTree.put("c","c");
+        binarySearchTree.put("d","d");
+        test3(binarySearchTree);
+        System.out.println(binarySearchTree.get("a"));
+
+    }
+
+    public void test3( BinarySearchTree<String,String> binarySearchTree) {
+        binarySearchTree.put("a","a");
     }
 }
