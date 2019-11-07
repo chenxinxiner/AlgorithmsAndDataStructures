@@ -1,10 +1,13 @@
 import collection.base.StackLink;
 import org.junit.jupiter.api.Test;
 
+import java.util.Iterator;
+import java.util.Stack;
+
 class StackLinkTest {
     @Test
     public void test() {
-        StackLink<Integer> stackLink = new StackLink();
+        /*StackLink<Integer> stackLink = new StackLink();
 
         stackLink.push(1);
         stackLink.push(2);
@@ -18,7 +21,18 @@ class StackLinkTest {
         System.out.println(stackLink.pop());
         System.out.println(stackLink.pop());
         System.out.println(stackLink.pop());
-        System.out.println(stackLink.pop());
+        System.out.println(stackLink.pop());*/
+
+        Stack<String> stack = new Stack();
+        stack.push("ss");
+        stack.push("123");
+        stack.push("43");
+
+        int[] a = new int[2];
+
+        Iterator iterator = stack.iterator();
+        while (iterator.hasNext())
+            System.out.println(iterator.next());
     }
 
 }
