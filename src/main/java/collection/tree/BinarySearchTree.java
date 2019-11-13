@@ -285,6 +285,15 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
         }
     }
 
+    /**
+     * 删除指定建
+      *@Description
+      *@Params [key]
+      *@Return void
+      *@Author chenxin
+      *@Date 2019/10/21 21:54
+      *@Version 1.0
+      **/
     public void delete(Key key) {
         root = delete(root, key);
     }
