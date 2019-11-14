@@ -1,3 +1,5 @@
+import unit.Son;
+
 /**
  * 提交
  *
@@ -9,12 +11,15 @@
  */
 public class Test {
     @org.junit.jupiter.api.Test
-    public void test(){
-        double a= 100.01;
-//        char b = ',';
-        char b =66;
-        System.out.printf(String.valueOf(b));
-        System.out.printf(String.valueOf((a+b)));
+    public void test() throws IllegalAccessException {
+//        double a= 100.01;
+////        char b = ',';
+//        char b =66;
+//        System.out.printf(String.valueOf(b));
+//        System.out.printf(String.valueOf((a+b)));
+
+        Son son = new Son("12","chen");
+        son.getPa();
 
     }
 }
