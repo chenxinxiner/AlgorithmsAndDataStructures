@@ -186,7 +186,7 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
      **/
     public Key select(int k) throws Exception {
         if (k < 0 || k > this.size()) {
-            throw new Exception("范围逸出");
+            throw new Exception("范围溢出");
         }
         return select(root, k);
     }
