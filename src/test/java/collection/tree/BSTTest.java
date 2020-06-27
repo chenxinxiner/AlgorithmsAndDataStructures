@@ -12,6 +12,9 @@ class BSTTest {
         BinarySearchTree<String, String> stringIntegerBST = new BinarySearchTree<String, String>();
         stringIntegerBST.put("h","h");
         stringIntegerBST.put("f","qweq");
+
+        System.out.println("sss");
+
         stringIntegerBST.put("m","m");
         stringIntegerBST.put("e","e");
         stringIntegerBST.put("b","b");
@@ -32,7 +35,7 @@ class BSTTest {
         // stringIntegerBST.deleteMax();
         // stringIntegerBST.delete("j");
         // stringIntegerBST.zhongxu();
-        Iterable<String> queue = stringIntegerBST.keys("b","m");
+        Iterable<String> queue = stringIntegerBST.keys("a","m");
         Iterator<String> iterator = queue.iterator();
         while (iterator.hasNext()) {
             System.out.println(iterator.next());

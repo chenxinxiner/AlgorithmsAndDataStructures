@@ -3,6 +3,9 @@ package algorithm.aboutArray;
 import org.junit.jupiter.api.Test;
 import unit.ArrayTestUnit;
 
+import java.lang.reflect.Array;
+import java.util.*;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class DynamicProgrammingTest {
