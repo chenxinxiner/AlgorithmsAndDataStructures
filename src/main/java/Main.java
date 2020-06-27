@@ -8,4 +8,11 @@
  * @version: 1.0$
  */
 public class Main {
+
+    public static int i = 12;
+
+    public static void main(String[] args) {
+        Main.i = 13;
+        System.out.println(Main.i);
+    }
 }

@@ -1,5 +1,7 @@
 package collection.tree;
 
+import sun.applet.Main;
+
 /**
  * 红黑树
  *
@@ -189,4 +191,6 @@ public class RedBlackTree<Key extends Comparable, Value> {
         }
     }
 
+    public static void main(String[] args) {
+    }
 }
